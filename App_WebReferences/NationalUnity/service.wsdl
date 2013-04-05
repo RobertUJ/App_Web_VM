@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.nationalunity.com/wss/wsvm/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.nationalunity.com/wss/wsvm/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.nationalunity.com/wss/wsvm/">
+      <s:element name="WsData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Iduser" type="tns:idCard" />
+            <s:element minOccurs="0" maxOccurs="1" name="Poliza" type="tns:Poliza" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="idCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isBeta" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Poliza">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Prefijo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Folio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoEndoso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstadoEntrada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotivoVisita" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaRegistro" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="InicioVigencia" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FinVigencia" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormaPago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Moneda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreAsegurado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MXCalleNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MXColonia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MXCodigoPostal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Producto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MXMunicipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MXEstadoNom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MXLada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MXTelefonoNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Anio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Serie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Placas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Marca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modelo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionUso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaisPlacas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstadoPlacas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remolque" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionRemolque" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PuertoEntrada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prima" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Derecho" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asistencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Miscelaneo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descuento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extraprima" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Concepto_Extraprima" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prefijo_anterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Folio_Anterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Financiamiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Enganche" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Meses_financiamiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero_Vehiculos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FolioCertificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenciaPago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filler1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filler2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreConductor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoLicencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ocupacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WsDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WsDataResult" type="tns:AutoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AutoResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Prefijo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Folio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodTransaction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="hasErrors" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsGetTarifaAuto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdUser" type="tns:idCard" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsGetTarifaAutoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsGetTarifaAutoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WsDataSoapIn">
+    <wsdl:part name="parameters" element="tns:WsData" />
+  </wsdl:message>
+  <wsdl:message name="WsDataSoapOut">
+    <wsdl:part name="parameters" element="tns:WsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsGetTarifaAutoSoapIn">
+    <wsdl:part name="parameters" element="tns:wsGetTarifaAuto" />
+  </wsdl:message>
+  <wsdl:message name="wsGetTarifaAutoSoapOut">
+    <wsdl:part name="parameters" element="tns:wsGetTarifaAutoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="WsData">
+      <wsdl:input message="tns:WsDataSoapIn" />
+      <wsdl:output message="tns:WsDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsGetTarifaAuto">
+      <wsdl:input message="tns:wsGetTarifaAutoSoapIn" />
+      <wsdl:output message="tns:wsGetTarifaAutoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet" />
+  <wsdl:portType name="ServiceHttpPost" />
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WsData">
+      <soap:operation soapAction="http://www.nationalunity.com/wss/wsvm/WsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGetTarifaAuto">
+      <soap:operation soapAction="http://www.nationalunity.com/wss/wsvm/wsGetTarifaAuto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WsData">
+      <soap12:operation soapAction="http://www.nationalunity.com/wss/wsvm/WsData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGetTarifaAuto">
+      <soap12:operation soapAction="http://www.nationalunity.com/wss/wsvm/wsGetTarifaAuto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="https://www.nationalunity.com/wss/wsvm/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="https://www.nationalunity.com/wss/wsvm/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="https://www.nationalunity.com/wss/wsvm/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="https://www.nationalunity.com/wss/wsvm/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

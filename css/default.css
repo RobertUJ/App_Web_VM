@@ -1,0 +1,41 @@
+﻿body 
+{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+}
+
+td 
+{
+    font-family:Verdana;
+    font-size:9pt;
+    color: #444444;
+}
+
+th 
+{
+    font-family:Verdana;
+    font-size:9pt;
+    color: #FFFFFF;
+}
+th.ticket 
+{
+    font-family:Calibri;
+    font-size:9pt;
+    color: #000000;
+}
+
+h3 
+{
+    font-family:Century Gothic; 
+    font-size: 12pt;      
+}
+
+a 
+{
+    font-family:Verdana;
+    font-size:9pt;
+    color: #FFFFFF;
+    text-decoration: none;
+}

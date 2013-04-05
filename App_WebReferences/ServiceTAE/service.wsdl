@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://Walkthrough/XmlWebServices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://Walkthrough/XmlWebServices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">wsClientes</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://Walkthrough/XmlWebServices/">
+      <s:element name="wsTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlVenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsObtenerCombinacion">
+        <s:complexType />
+      </s:element>
+      <s:element name="wsObtenerCombinacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsObtenerCombinacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsValidaToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsValidaTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wsValidaTokenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsLoginUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlVenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsLoginUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsLoginUserResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsRegistrodeClientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlVenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsRegistrodeClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsRegistrodeClientesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsVentadelDia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mxlVenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsVentadelDiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsVentadelDiaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsOperadoras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlOperadoras" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsOperadorasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsOperadorasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsOperadorasPrecios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlOperadoras" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsOperadorasPreciosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsOperadorasPreciosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsSaldoPuntoVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mxlVenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsSaldoPuntoVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsSaldoPuntoVentaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsVersionAplicativo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Aplicacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsVersionAplicativoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsVersionAplicativoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlTicket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsTicketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="wsTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:wsTransaction" />
+  </wsdl:message>
+  <wsdl:message name="wsTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:wsTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsObtenerCombinacionSoapIn">
+    <wsdl:part name="parameters" element="tns:wsObtenerCombinacion" />
+  </wsdl:message>
+  <wsdl:message name="wsObtenerCombinacionSoapOut">
+    <wsdl:part name="parameters" element="tns:wsObtenerCombinacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsValidaTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:wsValidaToken" />
+  </wsdl:message>
+  <wsdl:message name="wsValidaTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:wsValidaTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsLoginUserSoapIn">
+    <wsdl:part name="parameters" element="tns:wsLoginUser" />
+  </wsdl:message>
+  <wsdl:message name="wsLoginUserSoapOut">
+    <wsdl:part name="parameters" element="tns:wsLoginUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsRegistrodeClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:wsRegistrodeClientes" />
+  </wsdl:message>
+  <wsdl:message name="wsRegistrodeClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:wsRegistrodeClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsVentadelDiaSoapIn">
+    <wsdl:part name="parameters" element="tns:wsVentadelDia" />
+  </wsdl:message>
+  <wsdl:message name="wsVentadelDiaSoapOut">
+    <wsdl:part name="parameters" element="tns:wsVentadelDiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsOperadorasSoapIn">
+    <wsdl:part name="parameters" element="tns:wsOperadoras" />
+  </wsdl:message>
+  <wsdl:message name="wsOperadorasSoapOut">
+    <wsdl:part name="parameters" element="tns:wsOperadorasResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsOperadorasPreciosSoapIn">
+    <wsdl:part name="parameters" element="tns:wsOperadorasPrecios" />
+  </wsdl:message>
+  <wsdl:message name="wsOperadorasPreciosSoapOut">
+    <wsdl:part name="parameters" element="tns:wsOperadorasPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsSaldoPuntoVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:wsSaldoPuntoVenta" />
+  </wsdl:message>
+  <wsdl:message name="wsSaldoPuntoVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:wsSaldoPuntoVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsVersionAplicativoSoapIn">
+    <wsdl:part name="parameters" element="tns:wsVersionAplicativo" />
+  </wsdl:message>
+  <wsdl:message name="wsVersionAplicativoSoapOut">
+    <wsdl:part name="parameters" element="tns:wsVersionAplicativoResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:wsTicket" />
+  </wsdl:message>
+  <wsdl:message name="wsTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:wsTicketResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="wsTransaction">
+      <wsdl:input message="tns:wsTransactionSoapIn" />
+      <wsdl:output message="tns:wsTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsObtenerCombinacion">
+      <wsdl:input message="tns:wsObtenerCombinacionSoapIn" />
+      <wsdl:output message="tns:wsObtenerCombinacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsValidaToken">
+      <wsdl:input message="tns:wsValidaTokenSoapIn" />
+      <wsdl:output message="tns:wsValidaTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsLoginUser">
+      <wsdl:input message="tns:wsLoginUserSoapIn" />
+      <wsdl:output message="tns:wsLoginUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsRegistrodeClientes">
+      <wsdl:input message="tns:wsRegistrodeClientesSoapIn" />
+      <wsdl:output message="tns:wsRegistrodeClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsVentadelDia">
+      <wsdl:input message="tns:wsVentadelDiaSoapIn" />
+      <wsdl:output message="tns:wsVentadelDiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsOperadoras">
+      <wsdl:input message="tns:wsOperadorasSoapIn" />
+      <wsdl:output message="tns:wsOperadorasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsOperadorasPrecios">
+      <wsdl:input message="tns:wsOperadorasPreciosSoapIn" />
+      <wsdl:output message="tns:wsOperadorasPreciosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsSaldoPuntoVenta">
+      <wsdl:input message="tns:wsSaldoPuntoVentaSoapIn" />
+      <wsdl:output message="tns:wsSaldoPuntoVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsVersionAplicativo">
+      <wsdl:input message="tns:wsVersionAplicativoSoapIn" />
+      <wsdl:output message="tns:wsVersionAplicativoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsTicket">
+      <wsdl:input message="tns:wsTicketSoapIn" />
+      <wsdl:output message="tns:wsTicketSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wsTransaction">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsObtenerCombinacion">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsObtenerCombinacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsValidaToken">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsValidaToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsLoginUser">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsLoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRegistrodeClientes">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsRegistrodeClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsVentadelDia">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsVentadelDia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsOperadoras">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsOperadoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsOperadorasPrecios">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsOperadorasPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsSaldoPuntoVenta">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsSaldoPuntoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsVersionAplicativo">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsVersionAplicativo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsTicket">
+      <soap:operation soapAction="http://Walkthrough/XmlWebServices/wsTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wsTransaction">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsObtenerCombinacion">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsObtenerCombinacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsValidaToken">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsValidaToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsLoginUser">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsLoginUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRegistrodeClientes">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsRegistrodeClientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsVentadelDia">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsVentadelDia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsOperadoras">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsOperadoras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsOperadorasPrecios">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsOperadorasPrecios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsSaldoPuntoVenta">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsSaldoPuntoVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsVersionAplicativo">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsVersionAplicativo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsTicket">
+      <soap12:operation soapAction="http://Walkthrough/XmlWebServices/wsTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">wsClientes</wsdl:documentation>
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="https://www.ventamovil.com.mx:7064/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="https://www.ventamovil.com.mx:7064/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
